@@ -45,16 +45,17 @@ body {
   }
 }
 
-.case-card {
-  border-radius: 24px;
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* 3D book cover — same values as the original Framer site:
+   perspective(1200px), hover rotateY(-16deg) x(-32px) scale(1.02),
+   0.3s tween with ease [0.44, 0, 0.56, 1] */
+.book-cover {
+  transform: perspective(1200px);
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.44, 0, 0.56, 1);
 }
 
-.case-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+.group:hover .book-cover {
+  transform: perspective(1200px) translateX(-32px) scale(1.02) rotateY(-16deg);
 }
 
 .section-label {

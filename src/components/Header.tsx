@@ -16,7 +16,7 @@ export function Header() {
           <Logo className="text-foreground" />
           <span className="text-sm md:text-base">
             <span className="font-medium">{SITE.name}</span>
-            <span className="text-muted"> — UX Designer</span>
+            <span className="text-muted"> — Product Designer</span>
           </span>
         </Link>
         {isHome && (

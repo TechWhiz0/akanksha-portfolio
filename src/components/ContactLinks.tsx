@@ -2,8 +2,8 @@ import { SITE } from "@/lib/constants";
 
 const links = [
   { label: "Email", href: `mailto:${SITE.email}` },
+  { label: "Phone", href: `tel:${SITE.phoneHref}` },
   { label: "LinkedIn", href: SITE.linkedin },
-  { label: "X/Twitter", href: SITE.twitter },
 ];
 
 function ArrowIcon() {
@@ -33,8 +33,8 @@ export function ContactLinks() {
         <a
           key={link.label}
           href={link.href}
-          target={link.href.startsWith("mailto") ? undefined : "_blank"}
-          rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+          target={link.href.startsWith("http") ? "_blank" : undefined}
+          rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
           className="contact-link group"
         >
           <span className="text-lg font-medium">{link.label}</span>
